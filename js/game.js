@@ -44,6 +44,9 @@ class HangmanGame {
         this.drawHangman();
         this.hideMessage();
         
+        // Mostrar la pista inmediatamente
+        this.hintText.textContent = this.hint;
+        
         if (this.soundEnabled) {
             this.sounds.bg.play();
             this.sounds.bg.volume = 0.1;
@@ -60,12 +63,28 @@ class HangmanGame {
     createVirtualKeyboard() {
         const keyboard = document.getElementById('virtualKeyboard');
         keyboard.innerHTML = '';
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(letter => {
-            const button = document.createElement('button');
-            button.className = 'key-button';
-            button.textContent = letter;
-            button.addEventListener('click', () => this.handleGuess(letter));
-            keyboard.appendChild(button);
+        
+        // Layout QWERTY
+        const qwertyLayout = [
+            ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+            ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+            ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+        ];
+    
+        // Crear un div para cada fila
+        qwertyLayout.forEach(row => {
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'keyboard-row';
+            
+            row.forEach(letter => {
+                const button = document.createElement('button');
+                button.className = 'key-button';
+                button.textContent = letter;
+                button.addEventListener('click', () => this.handleGuess(letter));
+                rowDiv.appendChild(button);
+            });
+            
+            keyboard.appendChild(rowDiv);
         });
     }
 

@@ -206,3 +206,41 @@ body {
     color: var(--neon-pink);
     margin-right: 0.5rem;
 }
+/* Añadir al archivo style.css */
+.virtual-keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.key-button {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modificar el estilo del hint-box para que sea más visible */
+.hint-box {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--neon-purple);
+    border-radius: 5px;
+    font-family: 'PixelFont';
+    color: var(--neon-green);
+    font-size: 1.2rem;
+}
+
+.hint-box .hint-label {
+    display: none; /* Removemos el label ya que la pista se muestra automáticamente */
+}
