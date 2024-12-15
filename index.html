@@ -1,0 +1,71 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Hangman 80's</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="crt">
+        <div class="game-container">
+            <!-- Header -->
+            <header class="arcade-header">
+                <h1 class="neon-text">RETRO HANGMAN</h1>
+                <div class="score-board">
+                    <span class="wins">WINS: <span id="wins">0</span></span>
+                    <span class="losses">LOSSES: <span id="losses">0</span></span>
+                </div>
+            </header>
+
+            <!-- Main Game Area -->
+            <main class="game-area">
+                <div class="hangman-display">
+                    <canvas id="hangmanCanvas" width="300" height="300"></canvas>
+                </div>
+
+                <div class="word-area">
+                    <div id="wordDisplay" class="word-display"></div>
+                    <div id="hintBox" class="hint-box">
+                        <span class="hint-label">HINT:</span>
+                        <span id="hintText" class="typewriter"></span>
+                    </div>
+                </div>
+
+                <!-- Virtual Keyboard -->
+                <div class="virtual-keyboard" id="virtualKeyboard">
+                    <!-- Will be populated by JS -->
+                </div>
+            </main>
+
+            <!-- Game Controls -->
+            <div class="game-controls">
+                <button id="newGameBtn" class="neon-button">NEW GAME</button>
+                <button id="hintBtn" class="neon-button">SHOW HINT</button>
+                <button id="soundToggle" class="neon-button">SOUND: ON</button>
+            </div>
+
+            <!-- Game Messages -->
+            <div id="messageBox" class="message-box hidden">
+                <span id="messageText" class="typewriter"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="typeSound" src="assets/sounds/typewriter.mp3"></audio>
+    <audio id="correctSound" src="assets/sounds/correct.mp3"></audio>
+    <audio id="wrongSound" src="assets/sounds/wrong.mp3"></audio>
+    <audio id="winSound" src="assets/sounds/win.mp3"></audio>
+    <audio id="loseSound" src="assets/sounds/lose.mp3"></audio>
+    <audio id="bgMusic" src="assets/sounds/background-synth.mp3" loop></audio>
+
+    <!-- Scripts -->
+    <script src="js/words.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

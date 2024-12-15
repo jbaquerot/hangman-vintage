@@ -1,0 +1,66 @@
+/* animations.css */
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 1;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes win-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.win-pulse {
+    animation: win-pulse 0.5s ease-in-out;
+}
+
+.typewriter-effect {
+    overflow: hidden;
+    border-right: 3px solid var(--neon-blue);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typewriter 3s steps(40, end),
+        blink 0.75s step-end infinite;
+}
