@@ -34,8 +34,12 @@ const WORD_LIST = [
         hint: "Drawing and painting class"
     },
     {
-        word: "SCIENCE",
+        word: "NATURAL SCIENCE",
         hint: "Learning about plants, animals and doing cool experiments"
+    },
+    {
+        word: "SOCIAL SCIENCE",
+        hint: "The study of human society and of individual relationships in and to society"
     },
 
     // Health Words
@@ -52,15 +56,15 @@ const WORD_LIST = [
         hint: "When you feel too hot because you're sick"
     },
     {
-        word: "TUMMYACHE",
+        word: "TUMMY ACHE",
         hint: "When your belly hurts"
     },
     {
-        word: "EATWELL",
+        word: "EAT WELL",
         hint: "Having lots of healthy food and vegetables"
     },
     {
-        word: "SLEEPWELL",
+        word: "SLEEP WELL",
         hint: "Getting good rest at night in your bed"
     },
 
@@ -82,7 +86,7 @@ const WORD_LIST = [
         hint: "Using colors and brushes to make pictures"
     },
     {
-        word: "CARDGAMES",
+        word: "CARD GAMES",
         hint: "Fun games you play with a deck of cards"
     },
     {

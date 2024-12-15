@@ -1,12 +1,7 @@
 /* style.css */
 @font-face {
-    font-family: 'ArcadeFont';
-    src: url('../assets/fonts/arcade.woff2') format('woff2');
-}
-
-@font-face {
     font-family: 'PixelFont';
-    src: url('../assets/fonts/pixel.woff2') format('woff2');
+    src: url('../assets/fonts/pixel.ttf') format('truetype');
 }
 
 :root {
@@ -27,7 +22,7 @@
 body {
     background-color: var(--bg-dark);
     color: #fff;
-    font-family: 'ArcadeFont', sans-serif;
+    font-family: 'PixelFont', sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -101,6 +96,10 @@ body {
     margin-bottom: 2rem;
 }
 
+.game-title {
+    font-size: 2rem; /* Ajustar según necesidad */
+}
+
 .hangman-display {
     border: 2px solid var(--neon-purple);
     padding: 1rem;
@@ -129,7 +128,8 @@ body {
 .key-button {
     font-family: 'ArcadeFont';
     padding: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Ajustar según necesidad */
+    font-family: 'Press Start 2P', cursive;
     border: 2px solid var(--neon-green);
     background: transparent;
     color: var(--neon-green);
@@ -198,7 +198,7 @@ body {
 .hint-box {
     text-align: center;
     margin-top: 1rem;
-    font-family: 'PixelFont';
+    font-family: 'Press Start 2P', cursive;
     color: var(--neon-purple);
 }
 
@@ -231,7 +231,7 @@ body {
 /* Modificar el estilo del hint-box para que sea más visible */
 .hint-box {
     text-align: center;
-    margin: 1rem 0;
+    margin: 1rem;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid var(--neon-purple);
