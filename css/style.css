@@ -279,3 +279,13 @@ footer {
     font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.5);
 }
+
+.letter.space {
+    border: 2px solid var(--neon-blue);
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 0 5px var(--neon-blue);
+    opacity: 0.5;
+}

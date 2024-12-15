@@ -96,8 +96,8 @@ class HangmanGame {
     }
 
     handleGuess(letter) {
-        if (this.guessedLetters.has(letter)) return;
-
+        if (this.guessedLetters.has(letter) || letter === ' ') return;
+    
         this.guessedLetters.add(letter);
         const button = [...document.getElementsByClassName('key-button')]
             .find(btn => btn.textContent === letter);
@@ -113,18 +113,23 @@ class HangmanGame {
             this.remainingGuesses--;
             this.drawHangman();
         }
-
+    
         this.updateWordDisplay();
         this.checkGameEnd();
     }
 
     updateWordDisplay() {
         this.wordDisplay.innerHTML = this.word
-            .split('')
-            .map(letter => `<span class="letter">
+        .split('')
+        .map(letter => {
+            if (letter === ' ') {
+                return '<span class="letter space"></span>';
+            }
+            return `<span class="letter">
                 ${this.guessedLetters.has(letter) ? letter : '_'}
-            </span>`)
-            .join('');
+            </span>`;
+        })
+        .join('');
     }
 
     showHint() {
@@ -145,9 +150,11 @@ class HangmanGame {
     }
 
     checkGameEnd() {
-        const won = [...this.word].every(letter => this.guessedLetters.has(letter));
+        const won = [...this.word].every(letter => 
+            letter === ' ' || this.guessedLetters.has(letter)
+        );
         const lost = this.remainingGuesses === 0;
-
+    
         if (won) {
             if (this.soundEnabled) this.sounds.win.play();
             this.wins++;
@@ -159,7 +166,7 @@ class HangmanGame {
             this.showMessage(`GAME OVER! THE WORD WAS: ${this.word}`);
             localStorage.setItem('hangmanLosses', this.losses);
         }
-
+    
         if (won || lost) {
             this.updateScore();
             this.disableKeyboard();
