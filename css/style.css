@@ -1,16 +1,9 @@
-/* style.css */
-@font-face {
-    font-family: 'PixelFont';
-    src: url('../assets/fonts/pixel.ttf') format('truetype');
-}
-
 :root {
-    --neon-pink: #ff00ff;
-    --neon-blue: #00ffff;
     --neon-purple: #9d00ff;
-    --neon-green: #39ff14;
-    --bg-dark: #120458;
-    --grid-color: rgba(33, 33, 33, 0.9);
+    --neon-blue: #00fff9;
+    --neon-green: #00ff00;
+    --neon-red: #ff0000;
+    --bg-color: #1a1a1a;
 }
 
 * {
@@ -20,227 +13,269 @@
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: #fff;
-    font-family: 'PixelFont', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: white;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(0deg, transparent 24%, 
-        var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, 
-        var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, 
-        var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, 
-        var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent);
-    background-size: 50px 50px;
-    position: relative;
-    overflow: hidden;
 }
 
-.crt::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-    background-size: 100% 4px;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-.game-container {
-    background: rgba(0, 0, 0, 0.8);
-    border: 4px solid var(--neon-blue);
-    border-radius: 10px;
-    padding: 2rem;
+.container {
     max-width: 800px;
     width: 90%;
-    box-shadow: 0 0 20px var(--neon-blue),
-                inset 0 0 20px var(--neon-blue);
-    position: relative;
-}
-
-/* Header Styles */
-.arcade-header {
+    margin: 2rem auto;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
-.neon-text {
-    font-size: 3rem;
-    color: var(--neon-pink);
-    text-shadow: 0 0 5px var(--neon-pink),
-                 0 0 10px var(--neon-pink),
-                 0 0 20px var(--neon-pink),
-                 0 0 40px var(--neon-pink);
-    animation: flicker 1.5s infinite alternate;
-}
-
-.score-board {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    font-family: 'PixelFont', monospace;
-    color: var(--neon-green);
-}
-
-/* Game Area Styles */
-.game-area {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
+/* Game Title */
 .game-title {
-    font-size: 2rem; /* Ajustar según necesidad */
-}
-
-.hangman-display {
-    border: 2px solid var(--neon-purple);
-    padding: 1rem;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.word-display {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    letter-spacing: 0.5rem;
-    color: var(--neon-blue);
-}
-
-/* Virtual Keyboard Styles */
-.virtual-keyboard {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 0.5rem;
-    padding: 1rem;
-}
-
-.key-button {
-    font-family: 'ArcadeFont';
-    padding: 0.5rem;
-    font-size: 1rem; /* Ajustar según necesidad */
-    font-family: 'Press Start 2P', cursive;
-    border: 2px solid var(--neon-green);
-    background: transparent;
-    color: var(--neon-green);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.key-button:hover {
-    background: var(--neon-green);
-    color: black;
-    transform: scale(1.1);
-}
-
-.key-button.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    border-color: #666;
-    color: #666;
-}
-
-/* Game Controls */
-.game-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.neon-button {
-    font-family: 'ArcadeFont';
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border: 2px solid var(--neon-blue);
-    background: transparent;
-    color: var(--neon-blue);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-.neon-button:hover {
-    background: var(--neon-blue);
-    color: black;
-    box-shadow: 0 0 10px var(--neon-blue);
-}
-
-/* Message Box */
-.message-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 2rem;
-    border: 3px solid var(--neon-pink);
-    border-radius: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    z-index: 100;
-}
-
-.hidden {
-    display: none;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 /* Hint Box */
 .hint-box {
-    text-align: center;
-    margin-top: 1rem;
-    font-family: 'Press Start 2P', cursive;
-    color: var(--neon-purple);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--neon-purple);
+    border-radius: 5px;
+    color: var(--neon-green);
 }
 
-.hint-label {
-    color: var(--neon-pink);
-    margin-right: 0.5rem;
+/* Canvas for Hangman */
+#hangmanCanvas {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    margin: 1rem 0;
 }
-/* Añadir al archivo style.css */
+
+/* Word Display */
+.word-display {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    margin: 1.5rem 0;
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* Virtual Keyboard */
 .virtual-keyboard {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1rem;
+    margin: 1rem 0;
 }
 
 .keyboard-row {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .key-button {
-    min-width: 40px;
-    height: 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    min-width: 35px;
+    min-height: 35px;
+    margin: 0.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.key-button:hover {
+    background: var(--neon-blue);
+    color: black;
+    transform: scale(1.1);
+}
+
+.key-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: gray;
+}
+
+/* Game Messages */
+.message {
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.message.show {
+    opacity: 1;
+}
+
+.message.win {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.message.lose {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px var(--neon-red);
+}
+
+/* Guesses Counter */
+.guesses-left {
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    color: var(--neon-purple);
+}
+
+/* Control Buttons */
+.controls {
+    margin: 1rem 0;
+}
+
+.control-button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-button:hover {
+    background: var(--neon-purple);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Score Display */
+.score {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    color: var(--neon-green);
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--neon-purple),
+                     0 0 10px var(--neon-purple),
+                     0 0 15px var(--neon-purple);
+    }
+    to {
+        text-shadow: 0 0 10px var(--neon-purple),
+                     0 0 20px var(--neon-purple),
+                     0 0 30px var(--neon-purple);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .game-title {
+        font-size: 1.4rem;
+    }
+
+    .word-display {
+        font-size: 1.2rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .hint-box {
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }
+
+    .key-button {
+        font-size: 0.6rem;
+        min-width: 30px;
+        min-height: 30px;
+    }
+
+    #hangmanCanvas {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-title {
+        font-size: 1.2rem;
+    }
+
+    .word-display {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .key-button {
+        font-size: 0.5rem;
+        min-width: 25px;
+        min-height: 25px;
+        padding: 0.3rem;
+    }
+
+    .control-button {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+/* Sound Toggle Button */
+.sound-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
-/* Modificar el estilo del hint-box para que sea más visible */
-.hint-box {
-    text-align: center;
-    margin: 1rem;
+.loading-screen.hide {
+    display: none;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--neon-purple);
-    border-radius: 5px;
-    font-family: 'PixelFont';
-    color: var(--neon-green);
-    font-size: 1.2rem;
-}
-
-.hint-box .hint-label {
-    display: none; /* Removemos el label ya que la pista se muestra automáticamente */
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
 }
