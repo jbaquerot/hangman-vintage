@@ -130,5 +130,45 @@ const WORD_LIST = [
     {
         word: "PORTRAIT",
         hint: "A picture that's taller than it is wide"
+    },
+    {
+        word: "DRAW PICTURES",
+        hint: "Creating visual art with pencils or other drawing tools"
+    },
+    {
+        word: "MAKE CAKES",
+        hint: "Baking sweet desserts in the oven"
+    },
+    {
+        word: "MAKE VIDEOS",
+        hint: "Recording and editing visual content"
+    },
+    {
+        word: "PAINT PICTURES",
+        hint: "Creating art using colors and brushes"
+    },
+    {
+        word: "PLAY CARD GAMES",
+        hint: "Entertainment using a deck of cards"
+    },
+    {
+        word: "PLAY THE PIANO",
+        hint: "Making music on a keyboard instrument"
+    },
+    {
+        word: "VISIT MUSEUMS",
+        hint: "Going to places that display historical or artistic exhibits"
+    },
+    {
+        word: "VISIT YOUR GRANDPARENTS",
+        hint: "Spending time with your family's older generation"
+    },
+    {
+        word: "WATCH FILMS",
+        hint: "Viewing movies for entertainment"
+    },
+    {
+        word: "WATCH SPORTS",
+        hint: "Viewing athletic competitions"
     }
 ];
