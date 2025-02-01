@@ -167,8 +167,45 @@ const WORD_LIST = [
         word: "WATCH FILMS",
         hint: "Viewing movies for entertainment"
     },
+    // places
     {
-        word: "WATCH SPORTS",
-        hint: "Viewing athletic competitions"
+        word: "BOOKSHOP",
+        hint: "A store where you can buy books"
+    },
+    {
+        word: "CINEMA",
+        hint: "Place where you watch movies on a big screen"
+    },
+    {
+        word: "BUS STOPS",
+        hint: "Places where buses pick up passengers"
+    },
+    {
+        word: "CAFÉ",
+        hint: "A small restaurant serving coffee and light meals"
+    },
+    {
+        word: "FOOD MARKET",
+        hint: "Place where fresh food is sold"
+    },
+    {
+        word: "NEWSAGENT'S",
+        hint: "Shop that sells newspapers and magazines"
+    },
+    {
+        word: "POLICE STATION",
+        hint: "Building where police officers work"
+    },
+    {
+        word: "THEATRE",
+        hint: "Place where plays are performed"
+    },
+    {
+        word: "TOY SHOP",
+        hint: "Store that sells games and playthings"
+    },
+    {
+        word: "TRAIN STATION",
+        hint: "Place where trains arrive and depart"
     }
 ];
